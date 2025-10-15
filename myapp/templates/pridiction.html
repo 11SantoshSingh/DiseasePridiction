@@ -1,0 +1,101 @@
+{% extends "parent.html" %}
+{% block main %}
+  <h2 style="color:blue;text-align: center;">Disease Prediction</h2>
+  {% if res %}
+    <h4 style="color: red; text-align: center;">Predicted Disease: {{res}} </h4>
+  {%endif%}
+  <form class="form-group" method="post">
+    {% csrf_token %}
+    <table class="table table-bordered" style="width: 80%;margin: auto;">
+        <tbody>
+            <tr>
+                <td>Fever</td>
+                <td>
+                    <select class="form-select" name="fever">
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </td>
+                <td>Headache</td>
+                <td>
+                  <select class="form-select" name="headache">
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                  </select>
+                </td>
+            </tr>
+            <tr>
+              <td>Nausea</td>
+              <td>
+                <select class="form-select" name="nausea">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+              <td>Vomiting</td>
+              <td>
+                <select class="form-select" name="vomiting">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Fatigue</td>
+              <td>
+                <select class="form-select" name="fatigue">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+              <td>Joint Pain</td>
+              <td>
+                <select class="form-select" name="joint_pain">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Skin Rash</td>
+              <td>
+                <select class="form-select" name="skin_rash">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+              <td>Cough</td>
+              <td>
+                <select class="form-select" name="cough">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Weight Loss</td>
+              <td>
+                <select class="form-select" name="weight_loss">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+              <td>Yellow Eyes</td>
+              <td>
+                <select class="form-select" name="yellow_eyes">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                  <div style="margin: auto;width: fit-content;">
+                    <button type="submit" class="btn btn-success">Predict</button>
+                  </div>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+  </form>
+{% endblock main %}
